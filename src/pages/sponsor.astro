@@ -21,7 +21,7 @@ const isCommentEnabled =
 
 const title = sponsorConfig.title || i18n(I18nKey.sponsorTitle);
 const description =
-	sponsorConfig.description || i18n(I18nKey.sponsorDescription);
+	sponsorConfig.description ?? i18n(I18nKey.sponsorDescription);
 const enabledMethods = sponsorConfig.methods.filter((method) => method.enabled);
 const sponsors = sponsorConfig.sponsors || [];
 const showSponsorsList = sponsorConfig.showSponsorsList !== false;
@@ -213,4 +213,3 @@ function getQrLqipProps(qrCode: string) {
     gap: 0.75rem;
   }
 </style>
-
