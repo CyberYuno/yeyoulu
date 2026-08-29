@@ -5,8 +5,6 @@
 @import './waves.css';
 @import './transition.css';
 @import './custom-scrollbar.css';
-@import './gallery.css';
-@import './anime-bangumi.css';
 @import './tags.css';
 @import './display-settings.css';
 @import './categories.css';
@@ -587,4 +585,3 @@ html {
 .pagination-info {
   @apply text-sm text-(--text-secondary) text-center mb-2;
 }
-

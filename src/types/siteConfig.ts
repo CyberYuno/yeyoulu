@@ -80,10 +80,6 @@ export type SiteConfig = {
 	pages: {
 		friends: boolean; // 友链页面开关
 		sponsor: boolean; // 打赏页面开关
-		guestbook: boolean; // 留言板页面开关
-		bangumi: boolean;
-		gallery: boolean; // 相册页面开关
-		anime: boolean; // 追番页面开关
 		dynamic: boolean; // 动态页面开关
 	};
 
@@ -142,34 +138,6 @@ export type SiteConfig = {
 		generateOgImages: boolean;
 	};
 
-	// bangumi配置
-	bangumi?: {
-		userId?: string; // Bangumi用户ID
-		mode?: "static" | "dynamic"; // 数据模式：static=构建时获取，dynamic=客户端实时获取
-		apiUrl?: string; // Bangumi API 地址
-		subjectBaseUrl?: string; // 条目详情页地址
-		categoryOrder?: ("anime" | "game" | "book" | "music" | "real")[]; // 条目类型排序顺序
-		// 各分类的显示启用状态，未设置时默认启用
-		categories?: {
-			book?: boolean;
-			anime?: boolean;
-			music?: boolean;
-			game?: boolean;
-			real?: boolean;
-		};
-	};
-
-	// 追番配置（Bilibili + TMDB）
-	anime?: {
-		bilibili?: {
-			uid: string; // Bilibili 用户 UID
-		};
-		tmdb?: {
-			apiKey: string; // TMDB API Key
-			listId: string; // TMDB 列表 ID
-		};
-	};
-
 	// 分页配置
 	pagination: {
 		postsPerPage: number; // 每页显示的文章数量
@@ -192,7 +160,7 @@ export type SiteConfig = {
 		/**
 		 * 为特定域名的图片添加 referrerpolicy="no-referrer" 属性
 		 * 开启后可解决指定域名图片加载时的 403 问题（如防盗链图片）
-		 * 示例：["i0.hdslb.com", "*.bilibili.com"] 支持通配符 *
+		 * 示例：["images.example.com", "*.example.org"] 支持通配符 *
 		 * 仅影响匹配域名的图片标签，不影响其他链接的 referrer 行为
 		 */
 		noReferrerDomains?: string[];

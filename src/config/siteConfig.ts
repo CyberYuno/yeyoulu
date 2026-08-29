@@ -6,28 +6,19 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "夜游录",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "Midnight Marginalia",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://cyberyuno.github.io/yeyoulu/",
 
 	// 站点描述
-	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+	description: "吹灯窗更明，月照一天雪。",
 
 	// 站点关键词
-	keywords: [
-		"Firefly",
-		"Fuwari",
-		"Astro",
-		"ACGN",
-		"博客",
-		"技术博客",
-		"静态博客",
-	],
+	keywords: ["夜游录", "CyberYuno", "Astro", "个人博客", "技术博客"],
 
 	// 主题色
 	themeColor: {
@@ -72,12 +63,11 @@ export const siteConfig: SiteConfig = {
 		// 3. 本地图片（src目录，自动优化但会增加构建时间）: { type: "image", value: "assets/images/logo.webp", alt: "Logo" }
 		// 4. 网络图片: { type: "url", value: "https://example.com/logo.png", alt: "Logo" }
 		logo: {
-			type: "image",
-			value: "assets/images/firefly.png",
-			alt: "🍀",
+			type: "icon",
+			value: "material-symbols:history-edu-outline-rounded",
 		},
 		// 导航栏标题
-		title: "Firefly",
+		title: "夜游录",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中
@@ -91,7 +81,7 @@ export const siteConfig: SiteConfig = {
 	// 站点开始日期，用于统计运行天数
 	siteStartDate: "2025-01-01",
 
-	// 站点时区（IANA 时区字符串），用于格式化bangumi、rss里的构建日期时间等等..
+	// 站点时区（IANA 时区字符串），用于格式化 RSS 等内容里的日期时间
 	// 示例："Asia/Shanghai", "UTC", 如果为空，则按照构建服务器的时区进行时区转换
 	timezone: "Asia/Shanghai",
 
@@ -101,14 +91,6 @@ export const siteConfig: SiteConfig = {
 		friends: true,
 		// 打赏页面开关
 		sponsor: true,
-		// 留言板页面开关，需要配置评论系统
-		guestbook: true,
-		// 番组计划页面开关，含追番、游戏、书籍和音乐
-		bangumi: true,
-		// 相册页面开关
-		gallery: true,
-		// 追番页面开关
-		anime: true,
 		// 动态页面开关
 		dynamic: true,
 	},
@@ -187,44 +169,6 @@ export const siteConfig: SiteConfig = {
 		generateOgImages: false,
 	},
 
-	// bangumi配置
-	bangumi: {
-		// Bangumi用户ID
-		userId: "1143164",
-		// 数据模式：static=构建时获取，dynamic=客户端实时获取
-		// static 模式在构建时获取数据并静态渲染，部署后数据不更新
-		// dynamic 模式在浏览器中实时请求 API，始终显示最新数据
-		mode: "dynamic",
-		// Bangumi API 地址
-		apiUrl: "https://bgmapi.anibt.net",
-		// 详情页地址
-		subjectBaseUrl: "https://bgmmi.anibt.net/subject/",
-		// 条目类型排序，数组中的类型将按顺序优先展示
-		// 可选值: "anime" | "book" | "music" | "game" | "real" (暂不支持"real"类型)
-		// 未列出的类型将按默认顺序排在后面
-		categoryOrder: ["anime", "book", "music", "game"],
-		// 控制各分类的启用状态（true/false），未指定的分类默认启用
-		// categories: {
-		// 	game: false, // 禁用游戏分类显示
-		// },
-	},
-
-	// 追番配置（Bilibili + TMDB）
-	anime: {
-		// Bilibili 配置
-		bilibili: {
-			// 你的 Bilibili 用户 UID
-			uid: "38932988",
-		},
-		// TMDB 配置（可选，需要翻墙）
-		// tmdb: {
-		//   // TMDB API 密钥
-		//   apiKey: "your_tmdb_api_key",
-		//   // TMDB 列表 ID
-		//   listId: "your_list_id",
-		// },
-	},
-
 	// 分页配置
 	pagination: {
 		// 每页显示的文章数量
@@ -245,9 +189,9 @@ export const siteConfig: SiteConfig = {
 		// 图片压缩质量 (1-100)，值越低体积越小但质量越差，推荐 70-85
 		quality: 85,
 		// 为特定域名的图片添加 referrerpolicy="no-referrer" 属性
-		// 支持通配符 *，例如：["i0.hdslb.com", "*.bilibili.com"]
+		// 支持通配符 *，例如：["images.example.com", "*.example.org"]
 		// 可解决指定域名图片加载时的 403 问题（如防盗链图片）
-		noReferrerDomains: ["*.hdslb.com", "*.bilibili.com"],
+		noReferrerDomains: [],
 	},
 
 	// 站点语言，在本配置文件顶部SITE_LANG定义

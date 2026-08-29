@@ -44,8 +44,8 @@ export const sponsorConfig: SponsorConfig = {
 			icon: "simple-icons:kofi",
 			qrCode: "",
 			link: "https://ko-fi.com/cuteleaf",
-			description: "Buy a Coffee for Firefly",
-			enabled: true,
+			description: "Buy me a coffee",
+			enabled: false,
 		},
 		{
 			name: "爱发电",
